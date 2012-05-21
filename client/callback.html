@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+  <script>
+    function callback() {
+      console.log("callback.html callback");
+
+      sina.utils.keyguard("disable");
+      sina.utils.screen("wakeup");
+
+      sina.notification.notify({
+        "saeAppName": "mocodo",
+        "redirectUrl": "index.html",
+        "tickerText": "tickerText",
+        "contentTitle": "contentTitle",
+        "contentText": "contentText",
+        "id": 1
+      });
+
+      sina.utils.start("mocodo", "index.html");
+    }
+  </script>
+</body>
+</html>

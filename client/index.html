@@ -1,0 +1,91 @@
+﻿<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/style.css">
+  <phonegap></phonegap>
+</head>
+<body>
+  <div>
+    <div class="section">weibo</div>
+    <button onclick="app.weibo.init()">Init</button>
+    <button onclick="app.weibo.login()">Login</button>
+    <button onclick="app.weibo.logout()">Logout</button>
+    <button onclick="app.weibo.timeline()">Timeline</button>
+    <button onclick="app.weibo.get()">get</button>
+    <button onclick="app.weibo.post()">post</button>
+    <button id="upload" onclick="app.weibo.upload()">upload</button>
+  </div>
+
+  <div>
+    <div class="section">voice recognizer</div>
+    <button onclick="app.voice.recognizer.start()">语音识别</button>
+    <button onclick="app.voice.recognizer.uploadKeyword()" >上传关键字</button>
+    <button onclick="app.voice.recognizer.keywordRecogize()" >关键字识别</button>
+    <div id="voice-text"></div>
+  </div>
+
+  <div>
+    <div class="section">alarm</div>
+    <button id="start" onclick="app.alarm.start()">开始</button>
+    <button id="stop" onclick="app.alarm.stop()">停止</button>
+  </div>
+
+  <div>
+    <div class="section">notification</div>
+    <button onclick="app.notification.notify()">通知</button>
+    <button onclick="app.notification.cancel()">取消</button>
+    <button onclick="app.notification.cancelAll()">取消所有</button>
+  </div>
+
+  <div>
+    <div class="section">utils</div>
+    <button onclick="app.utils.exit()">退出</button>
+    <button onclick="app.utils.lockscreen()">关闭屏幕</button>
+  </div>
+
+  <div>
+    <div class="section">child browser</div>
+    <button onclick="app.childbrowser.showWebPage()">显示网页</button>
+    <button onclick="app.childbrowser.openExternal()">打开外部</button>
+  </div>
+
+  <div>
+    <div class="section">image filter</div>
+    <button onclick="app.imagefilter.goto()">显示网页</button>
+  </div>
+
+  <div>
+    <div class="section">cordova example</div>
+    <button onclick="app.cordova.goto()">显示网页</button>
+  </div>
+
+  <div>
+    <div class="section">media example</div>
+    <button onclick="window.open('Media/index.html')">显示网页</button>
+  </div>
+
+  <div>
+    <div class="section">sms example</div>
+    <button onclick="app.sms.send()">发送短信给自己</button>
+    <button onclick="app.sms.getInbox()">获取收件箱</button>
+    <button onclick="app.sms.getAllTen()">获取10,20条</button>
+    <button onclick="app.sms.getThread()">获取Thread</button>
+    <button onclick="app.sms.insert()">插入一条短信</button>
+    <button onclick="app.sms.delete()">删除刚刚插入的短信</button>
+  </div>
+
+  <div>
+    <button onclick="window.open('ics/index.html')">android ics</button>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
