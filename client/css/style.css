@@ -104,3 +104,4 @@ td { vertical-align: top; }
 
 button {padding:10px; width:100px;}
 .section {margin-left:3px;}
+.header {background-color: #BBB; height: 45px; line-height: 45px; text-align: center;}

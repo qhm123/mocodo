@@ -232,7 +232,7 @@ app.cordova = {
 
 app.sms = {
   send : function() {
-    sina.sms.send("13146477160", "给自己的测试短信", function() {
+    sina.sms.send("phonenumber", "给自己的测试短信", function() {
       console.log("success");
       alert("success: send 13146477160");
     }, function(e) {
