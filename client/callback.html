@@ -6,23 +6,30 @@
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
   <script>
     function callback() {
       console.log("callback.html callback");
 
-      sina.utils.keyguard("disable");
-      sina.utils.screen("wakeup");
+      $.ajax({
+        url: "server/api.php"
+      }).done(function(data) {
+        if(data.code == 0) {
+          data.msg;
 
-      sina.notification.notify({
-        "saeAppName": "mocodo",
-        "redirectUrl": "index.html",
-        "tickerText": "tickerText",
-        "contentTitle": "contentTitle",
-        "contentText": "contentText",
-        "id": 1
+          sina.utils.keyguard("disable");
+          sina.utils.screen("wakeup");
+
+          sina.notification.notify({
+            "saeAppName": "mocodo",
+            "redirectUrl": "index.html",
+            "tickerText": "tickerText",
+            "contentTitle": "contentTitle",
+            "contentText": "contentText",
+            "id": 1
+          });
+        }
       });
-
-      sina.utils.start("mocodo", "index.html");
     }
   </script>
 </body>

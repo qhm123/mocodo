@@ -2,6 +2,22 @@ function stringToJSON(obj) {
   return eval('(' + obj + ')');
 }
 
+function eventsouceTest() {
+  if(typeof(EventSource)!=="undefined")
+  {
+    var source=new EventSource("http://mocodo.sinaapp.com/server/eventsouce.php");
+    source.onmessage=function(event)
+    {
+      //document.getElementById("result").innerHTML+=event.data + "<br />";
+      alert("msg: " + event.data);
+    };
+  }
+  else
+  {
+    alert("not support");
+  }
+}
+
 $.ajaxSetup({
   // Disable caching of AJAX responses
   cache : false
@@ -17,6 +33,12 @@ app.alarm = {
     sina.alarm.stop();
   }
 };
+
+app.updater = {
+  check : function() {
+    sina.updater.check();
+  },
+}
 
 app.notification = {
   notify : function() {
@@ -301,5 +323,26 @@ app.sms = {
         alert("del " + app.sms.insertId + " failed.");
       });
     }
+  }
+};
+
+app.barcode = {
+  scan: function() {
+    sina.barcodeScanner.scan( function(result) {
+          alert("We got a barcode\n" +
+                    "Result: " + result.text + "\n" +
+                    "Format: " + result.format + "\n" +
+                    "Cancelled: " + result.cancelled);
+      }, function(error) {
+          alert("Scanning failed: " + error);
+      });
+  },
+  encode: function() {
+    sina.barcodeScanner.encode(BarcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com", function(success) {
+          alert("encode success: " + success);
+        }, function(fail) {
+          alert("encoding failed: " + fail);
+        }
+      );
   }
 };
